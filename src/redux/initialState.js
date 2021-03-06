@@ -1,3 +1,5 @@
 export const initialState = {
-    carouselImages: []
-}
+  carouselImages: [],
+  allBreeds: {},
+  selectedBreed: {},
+};

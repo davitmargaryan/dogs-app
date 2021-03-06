@@ -1,5 +1,13 @@
-const Content = () => {
-    return <div>this is Content</div>
-}
+import AllBreeds from "./AllBreeds";
+import SelectedBreed from "./SelectedBreed";
 
-export default Content
+const Content = () => {
+  return (
+    <div style={{ display: "flex" }}>
+      <AllBreeds />
+      <SelectedBreed />
+    </div>
+  );
+};
+
+export default Content;
