@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { connect } from "react-redux";
+import { ColorContext } from "../contexts/context";
 
-class SelectedBreed extends React.Component {
-  render() {
-    const { breed } = this.props;
-    const { type, value } = breed;
-    return (
-      <div style={{ flex: 3 }}>
-        {!type && <div>Please select a breed from the list</div>}
-        {type && (
-          <div>
-            selected {type} - {value}
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+import Breed from "./Breed";
+
+const SelectedBreed = (props) => {
+  const {
+    breed: { type },
+  } = props;
+  const color = useContext(ColorContext);
+  return (
+    <div style={{ flex: 3 }}>
+      {!type && (
+        <h1 style={{ color: color }}>Please select a breed from the list</h1>
+      )}
+      {type && <Breed />}
+    </div>
+  );
+};
 
 const սթեյթիցՎերցրուԴիրՓրոփսիՄեջ = (allState) => ({
   breed: allState.selectedBreed,

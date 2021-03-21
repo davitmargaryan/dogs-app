@@ -1,4 +1,5 @@
-import { createStore } from "redux";
+import { firebaseReducer, firestoreReducer } from "react-redux-firebase";
+import { combineReducers, createStore } from "redux";
 import { initialState } from "./initialState";
 
 export const SET_CAROUSEL_IMAGES_ACTION_TYPE =
@@ -31,6 +32,7 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
 
 const store = createStore(
   reducer,
